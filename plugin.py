@@ -8,11 +8,11 @@
         <h2>Broadlink plugin</h2><br/>
     </description>
     <params>
-        <param field="Address" label="IP Address" width="200px" required="true" default="10.0.0.140"/>
-        <param field="debug" label="Debug" width="75px">
+        <param field="address" label="IP Address" width="200px" required="true" default="10.0.0.140"/>
+        <param field="debug" label="debug" width="75px">
             <options>
-                <option label="True" value="Debug"/>
-                <option label="False" value="Normal"  default="true" />
+                <option label="True" value="1"/>
+                <option label="False" value="0"  default="0" />
             </options>
         </param>
     </params>
@@ -53,9 +53,9 @@ class BasePlugin:
 
     def onStart(self):
         DomoticzEx.Log("onStart called")
-        self.ip = Parameters['Address']
-        DomoticzEx.Log(Parameters['Address'])
-        if Parameters["Debug"] != "0":
+        self.ip = Parameters['address']
+        DomoticzEx.Log(Parameters['address'])
+        if Parameters["debug"] != "0":
             DomoticzEx.Debugging(int(Parameters["debug"]))
             DumpConfigToLog()
 
