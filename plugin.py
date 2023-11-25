@@ -55,7 +55,7 @@ class BasePlugin:
         DomoticzEx.Log("onStart called")
         self.ip = Parameters['Address']
         DomoticzEx.Log(Parameters['Address'])
-        if Parameters["debug"] != "0":
+        if Parameters["Debug"] != "0":
             DomoticzEx.Debugging(int(Parameters["debug"]))
             DumpConfigToLog()
 
